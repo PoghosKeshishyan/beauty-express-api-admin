@@ -34,11 +34,12 @@ nav a {
 table {
     font-family: Arial, sans-serif;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 table td,
 table th {
-    /* border: 2px solid black; */
+    border: 1px solid black;
     text-align: left;
     padding: 10px;
 }

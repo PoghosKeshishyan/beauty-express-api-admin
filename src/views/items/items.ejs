@@ -1,0 +1,26 @@
+<h2><%= title %></h2>
+
+<a href="/items/create">Create New <%= title %></a>
+
+<table>
+    <tr>
+        <th>N</th>
+        <th>id</th>
+        <th>title</th>
+        <th>description</th>
+        <th>actions</th>
+    </tr>
+
+    <% items.forEach((elem, index) => { %>
+        <tr>
+            <td><%= index + 1 %></td>
+            <td><%= elem.id %></td>
+            <td><%= elem.title %></td>
+            <td><%= elem.description %></td>
+            <td>
+                <a href="/items/edit/<%= elem.id %>">Edit</a>
+                <a href="/items/remove/<%= elem.id %>">Remove</a>
+            </td>
+        </tr>
+    <% }) %>
+</table>

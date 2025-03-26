@@ -1,0 +1,16 @@
+auth controlleri - Prisman
+ID - uuid
+
+const get_edit_page = async (req, res) => {
+    const user = req.session.user;
+    const id = +req.params.id;
+    
+
+    const post_edit = async (req, res) => {
+        const user = req.session.user;
+        const id = +req.params.id;
+
+
+        
+const remove = async (req, res) => {
+    const id = +req.params.id;
