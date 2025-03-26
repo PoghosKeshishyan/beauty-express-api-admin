@@ -21,3 +21,9 @@ model Item {
   title       String
   description String
 }
+
+model Navbar {
+  id    String @id @default(uuid())
+  title String
+  url   String
+}

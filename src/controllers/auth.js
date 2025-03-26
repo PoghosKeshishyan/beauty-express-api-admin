@@ -16,7 +16,11 @@ const register_post = async (req, res) => {
         });
     }
 
-    const existingUser = await prisma.user.findUnique({ where: { username } });
+    const existingUser = await prisma.user.findUnique({ 
+        where: { 
+            username, 
+        },
+    });
 
     if (existingUser) {
         return res.render('auth/register', {
@@ -25,8 +29,12 @@ const register_post = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
+
     const new_user = await prisma.user.create({
-        data: { username, password: hashedPassword },
+        data: { 
+            username, 
+            password: hashedPassword, 
+        },
     });
 
     req.session.user = new_user.username;
@@ -48,7 +56,11 @@ const login_post = async (req, res) => {
         });
     }
 
-    const userFromDB = await prisma.user.findUnique({ where: { username } });
+    const userFromDB = await prisma.user.findUnique({ 
+        where: { 
+            username, 
+        }, 
+    });
 
     if (!userFromDB || !(await bcrypt.compare(password, userFromDB.password))) {
         return res.render('auth/login', { 
