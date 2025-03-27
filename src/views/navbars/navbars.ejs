@@ -1,6 +1,6 @@
 <h2><%= title %></h2>
 
-<a href="/<%= title %>/create">Create New <%= title %></a>
+<a href="/navbars/create">Create New <%= title %></a>
 
 <table>
     <tr>
@@ -16,8 +16,8 @@
             <td><%= elem.title %></td>
             <td><%= elem.url %></td>
             <td>
-                <a href="/<%= title %>/edit/<%= elem.id %>">Edit</a>
-                <a href="/<%= title %>/remove/<%= elem.id %>">Remove</a>
+                <a href="/navbars/edit/<%= elem.id %>">Edit</a>
+                <a href="/navbars/remove/<%= elem.id %>">Remove</a>
             </td>
         </tr>
     <% }) %>

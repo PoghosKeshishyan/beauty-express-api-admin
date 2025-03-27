@@ -31,6 +31,10 @@ nav a {
     padding: 2em;
 }
 
+a {
+    color: #0000EE;
+}
+
 table {
     font-family: Arial, sans-serif;
     border-collapse: collapse;

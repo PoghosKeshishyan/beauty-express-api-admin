@@ -1,22 +1,24 @@
 const { prisma } = require('../../prisma/prisma-client');
 
-const get_list_page = async (req, res) => {
+const list_page = async (req, res) => {
     const user = req.session.user;
     const items = await prisma.item.findMany();
     res.render('items/items', { items, user, title: 'Items', layout: 'base' });
 };
 
-const get_create_page = (req, res) => {
+const create_page = (req, res) => {
     const user = req.session.user;
     res.render('items/create_item', { error: null, user, title: 'Create Item', layout: 'base' });
 };
 
-const post_create = async (req, res) => {
+const add = async (req, res) => {
     const user = req.session.user;
     const data = req.body;
 
     if (!data.title || !data.description) {
-        return res.render('items/create_item', { error: 'All fields are required', user, title: 'Create Item', layout: 'base' });
+        return res.render('items/create_item', { 
+            error: 'All fields are required', user, title: 'Create Item', layout: 'base',
+        });
     }
 
     await prisma.item.create({
@@ -26,7 +28,7 @@ const post_create = async (req, res) => {
     res.redirect('/items');
 };
 
-const get_edit_page = async (req, res) => {
+const edit_page = async (req, res) => {
     const user = req.session.user;
     const id = req.params.id;
     
@@ -43,7 +45,7 @@ const get_edit_page = async (req, res) => {
     res.render('items/update_item', { item, error: null, user, title: 'Edit Item', layout: 'base' });
 };
 
-const post_edit = async (req, res) => {
+const edit = async (req, res) => {
     const user = req.session.user;
     const id = req.params.id;
     const data = req.body;
@@ -59,7 +61,9 @@ const post_edit = async (req, res) => {
     }
 
     if (!data.title || !data.description) {
-        return res.render('items/update_item', { error: 'All fields are required', item, user, title: 'Edit Item', layout: 'base' });
+        return res.render('items/update_item', { 
+            error: 'All fields are required', item, user, title: 'Edit Item', layout: 'base',
+        });
     }
 
     await prisma.item.update({
@@ -78,17 +82,17 @@ const remove = async (req, res) => {
     await prisma.item.delete({
         where: {
             id,
-        }
+        },
     });
 
     res.redirect('/items');
 };
 
 module.exports = {
-    get_list_page,
-    get_create_page,
-    post_create,
-    get_edit_page,
-    post_edit,
+    list_page,
+    create_page,
+    add,
+    edit_page,
+    edit,
     remove,
 };
