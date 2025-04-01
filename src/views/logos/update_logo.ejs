@@ -1,0 +1,15 @@
+<h2><%= title %></h2>
+
+<form method="post" action="/logos/edit/<%= logo.id %>">
+    <label>Image:</label><br>
+    <input type="text" name="image" value="<%= logo.image %>"><br>
+
+    <label>Title:</label><br>
+    <input type="text" name="title" value="<%= logo.title %>"><br>
+    
+    <button type="submit">Update</button>
+</form>
+
+<% if (error) { %>
+    <p style="color:red;"><%= error %></p>
+<% } %>

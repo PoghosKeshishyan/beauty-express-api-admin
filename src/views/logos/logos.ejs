@@ -1,0 +1,28 @@
+<h2><%= title %></h2>
+
+<a href="/logos/create">Create New <%= title %></a>
+
+<table>
+    <tr>
+        <th>N</th>
+        <th>image</th>
+        <th>title</th>
+        <th>actions</th>
+    </tr>
+
+    <% logos.forEach((elem, index) => { %>
+        <tr>
+            <td><%= index + 1 %></td>
+            <td>
+                <a href="<%= elem.image %>" target="_blank">
+                    <img src="<%= elem.image %>" alt="<%= elem.image %>">
+                </a>
+            </td>
+            <td><%= elem.title %></td>
+            <td>
+                <a href="/logos/edit/<%= elem.id %>">Edit</a>
+                <a href="/logos/remove/<%= elem.id %>">Remove</a>
+            </td>
+        </tr>
+    <% }) %>
+</table>

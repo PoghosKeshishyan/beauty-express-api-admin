@@ -22,6 +22,12 @@ model Item {
   description String
 }
 
+model Logo {
+  id    String @id @default(uuid())
+  image String
+  title String
+}
+
 model Navbar {
   id    String @id @default(uuid())
   title String

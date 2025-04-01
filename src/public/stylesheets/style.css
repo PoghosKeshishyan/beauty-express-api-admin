@@ -52,6 +52,14 @@ table tr:nth-child(even) {
     background-color: lightgray;
 }
 
+table img {
+    width: 160px;
+}
+
+button {
+    margin-top: 10px;
+}
+
 footer {
     background: #333;
     display: flex;
@@ -59,4 +67,21 @@ footer {
     justify-content: space-between;
     padding: 0 30px;
     color: #fff;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 20px;
+} 
+
+ul li img {
+    width: 200px;
+}
+
+ul li form {
+    display: inline;
 }

@@ -24,9 +24,11 @@ app.set('layout', 'base');
 
 
 app.use('/', require('./routes/home'));
-app.use('/auth', require('./routes/auth'));
+app.use('/users', require('./routes/users'));
 app.use('/items', require('./routes/items'));
+app.use('/logos', require('./routes/logos'));
 app.use('/navbars', require('./routes/navbars'));
+app.use('/images', require('./routes/images'));
 
 
 app.set('port', process.env.PORT || 3000);

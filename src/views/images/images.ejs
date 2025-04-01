@@ -1,0 +1,28 @@
+<h1>Upload Image</h1>
+
+<form action="/images/upload" method="post" enctype="multipart/form-data">
+  <input type="file" name="image" accept="image/*" required>
+  <button type="submit">Upload</button>
+</form>
+
+<hr>
+
+<h2>Uploaded Images</h2>
+
+<% if (images && images.length > 0) { %>
+  <ul>
+    <% images.forEach(image => { %>
+      <li>
+        <img src="/images/<%= image %>" alt="<%= image %>"><br>
+        <strong>/images/<%= image %></strong>
+
+        <form action="/images/delete" method="post">
+          <input type="hidden" name="filename" value="<%= image %>">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+<% } else { %>
+  <p>No images uploaded yet.</p>
+<% } %>

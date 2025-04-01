@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const register_get = (req, res) => {
     const user = req.session.user;
-    res.render('auth/register', { error: null, title: 'Register', user, layout: 'base' });
+    res.render('users/register', { error: null, title: 'Register', user, layout: 'base' });
 };
 
 const register_post = async (req, res) => {
@@ -11,7 +11,7 @@ const register_post = async (req, res) => {
     const { username, password } = req.body;
 
     if (!username || !password) {
-        return res.render('auth/register', { 
+        return res.render('users/register', { 
             error: 'Please fill in all fields', title: 'Register', user, layout: 'base' 
         });
     }
@@ -23,7 +23,7 @@ const register_post = async (req, res) => {
     });
 
     if (existingUser) {
-        return res.render('auth/register', {
+        return res.render('users/register', {
             error: 'Username already exists', title: 'Register', user, layout: 'base',
         });
     }
@@ -43,7 +43,7 @@ const register_post = async (req, res) => {
 
 const login_get = (req, res) => {
     const user = req.session.user;
-    res.render('auth/login', { error: null, title: 'Login', user, layout: 'base' });
+    res.render('users/login', { error: null, title: 'Login', user, layout: 'base' });
 };
 
 const login_post = async (req, res) => {
@@ -51,7 +51,7 @@ const login_post = async (req, res) => {
     const { username, password } = req.body;
 
     if (!username || !password) {
-        return res.render('auth/login', { 
+        return res.render('users/login', { 
             error: 'Please fill in all fields', title: 'Login', user, layout: 'base' 
         });
     }
@@ -63,7 +63,7 @@ const login_post = async (req, res) => {
     });
 
     if (!userFromDB || !(await bcrypt.compare(password, userFromDB.password))) {
-        return res.render('auth/login', { 
+        return res.render('users/login', { 
             error: 'Invalid credentials', title: 'Login', user, layout: 'base',
         });
     }
