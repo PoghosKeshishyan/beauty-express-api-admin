@@ -1,0 +1,12 @@
+<h2><%= title %></h2>
+
+<form method="post" action="/offers_headings/edit/<%= offers_heading.id %>">
+    <label>Offers heading:</label><br>
+    <input type="text" name="heading" value="<%= offers_heading.heading %>"><br>
+
+    <button type="submit">Update</button>
+</form>
+
+<% if (error) { %>
+    <p style="color:red;"><%= error %></p>
+<% } %>

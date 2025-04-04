@@ -1,0 +1,24 @@
+<h2><%= title %></h2>
+
+<form method="post" action="/intros/edit/<%= intro.id %>">
+    <label>Image:</label><br>
+    <input type="text" name="image" value="<%= intro.title %>"><br>
+
+    <label>Title:</label><br>
+    <input type="text" name="title" value="<%= intro.title %>"><br>
+
+    <label>Descr:</label><br>
+    <input type="text" name="descr" value="<%= intro.descr %>"><br>
+
+    <label>Btn text:</label><br>
+    <input type="text" name="btn_text" value="<%= intro.btn_text %>"><br>
+
+    <label>Btn Url:</label><br>
+    <input type="text" name="btn_url" value="<%= intro.btn_url %>"><br>
+
+    <button type="submit">Update</button>
+</form>
+
+<% if (error) { %>
+    <p style="color:red;"><%= error %></p>
+<% } %>

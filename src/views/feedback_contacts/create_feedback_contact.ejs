@@ -1,0 +1,24 @@
+<h2><%= title %></h2>
+
+<form method="post" action="/feedback_contacts/create">
+    <label>Image:</label><br>
+    <input type="text" name="image"><br>
+
+    <label>Title:</label><br>
+    <input type="text" name="title"><br>
+
+    <label>Descr:</label><br>
+    <input type="text" name="descr"><br>
+
+    <label>Btn text:</label><br>
+    <input type="text" name="btn_text"><br>
+
+    <label>Btn Url:</label><br>
+    <input type="text" name="btn_url"><br>
+
+    <button type="submit">Create</button>
+</form>
+
+<% if (error) { %>
+    <p style="color:red;"><%= error %></p>
+<% } %>

@@ -1,2 +1,14 @@
 <h1>Beauty</h1>
 <p>Welcome to Beauty backend</p>
+
+<hr>
+
+<h2>API List Endpoints</h2>
+
+<div class="list-endpoints">
+    <% api_list_endpoints.forEach(endpoint => { %>
+        <a href="<%= endpoint %>" target="_blank">
+            <span>GET</span>   <%= endpoint %>
+        </a>
+    <% }); %>
+</div>

@@ -1,0 +1,30 @@
+<h2><%= title %></h2>
+
+<form method="post" action="/footers/create">
+    <label>YouTube Icon URL:</label><br>
+    <input type="text" name="youtube_icon"><br>
+
+    <label>VK Icon URL:</label><br>
+    <input type="text" name="vk_icon"><br>
+
+    <label>Instagram Icon URL:</label><br>
+    <input type="text" name="instagram_icon"><br>
+
+    <label>Facebook Icon URL:</label><br>
+    <input type="text" name="facebook_icon"><br>
+
+    <label>Address:</label><br>
+    <input type="text" name="address"><br>
+
+    <label>Phone Image URL:</label><br>
+    <input type="text" name="phone_image"><br>
+
+    <label>Phone:</label><br>
+    <input type="text" name="phone"><br>
+
+    <button type="submit">Create</button>
+</form>
+
+<% if (error) { %>
+    <p style="color:red;"><%= error %></p>
+<% } %>

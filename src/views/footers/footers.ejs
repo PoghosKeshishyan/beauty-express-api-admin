@@ -1,0 +1,46 @@
+<h2><%= title %></h2>
+
+<a href="/footers/create">Create New <%= title %></a>
+
+<table>
+    <tr>
+        <th>N</th>
+        <th>youtube icon</th>
+        <th>vk icon</th>
+        <th>instagram icon</th>
+        <th>facebook icon</th>
+        <th>address</th>
+        <th>phone image</th>
+        <th>phone</th>
+        <th>actions</th>
+    </tr>
+
+    <% footers.forEach((elem, index) => { %>
+        <tr>
+            <td><%= index + 1 %></td>
+            <td>
+                <img src="<%= elem.youtube_icon %>" alt="YouTube Icon" width="50">
+            </td>
+            <td>
+                <img src="<%= elem.vk_icon %>" alt="VK Icon" width="50">
+            </td>
+            <td>
+                <img src="<%= elem.instagram_icon %>" alt="Instagram Icon" width="50">
+            </td>
+            <td>
+                <img src="<%= elem.facebook_icon %>" alt="Facebook Icon" width="50">
+            </td>
+            <td><%= elem.address %></td>
+            <td>
+                <a href="<%= elem.phone_image %>" target="_blank">
+                    <img src="<%= elem.phone_image %>" alt="Phone Image" width="50">
+                </a>
+            </td>
+            <td><%= elem.phone %></td>
+            <td>
+                <a href="/footers/edit/<%= elem.id %>">Edit</a>
+                <a href="/footers/remove/<%= elem.id %>">Remove</a>
+            </td>
+        </tr>
+    <% }) %>
+</table>

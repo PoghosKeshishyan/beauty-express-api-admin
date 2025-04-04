@@ -1,0 +1,24 @@
+<h2><%= title %></h2>
+
+<form method="post" action="/offers_items/edit/<%= offers_item.id %>">
+    <label>Image:</label><br>
+    <input type="text" name="image" value="<%= offers_item.image %>"><br>
+
+    <label>Descr:</label><br>
+    <input type="text" name="descr" value="<%= offers_item.descr %>"><br>
+
+    <label>Price:</label><br>
+    <input type="text" name="price" value="<%= offers_item.price %>"><br>
+
+    <label>Btn Text:</label><br>
+    <input type="text" name="btn_text" value="<%= offers_item.btn_text %>"><br>
+
+    <label>Btn Url:</label><br>
+    <input type="text" name="btn_url" value="<%= offers_item.btn_url %>"><br>
+
+    <button type="submit">Update</button>
+</form>
+
+<% if (error) { %>
+    <p style="color:red;"><%= error %></p>
+<% } %>

@@ -1,0 +1,24 @@
+<h2><%= title %></h2>
+
+<form method="post" action="/feedback_contacts/edit/<%= feedback_contact.id %>">
+    <label>Image:</label><br>
+    <input type="text" name="image" value="<%= feedback_contact.image %>"><br>
+
+    <label>Title:</label><br>
+    <input type="text" name="title" value="<%= feedback_contact.title %>"><br>
+
+    <label>Descr:</label><br>
+    <input type="text" name="descr" value="<%= feedback_contact.descr %>"><br>
+
+    <label>Btn Text:</label><br>
+    <input type="text" name="btn_text" value="<%= feedback_contact.btn_text %>"><br>
+
+    <label>Btn Url:</label><br>
+    <input type="text" name="btn_url" value="<%= feedback_contact.btn_url %>"><br>
+
+    <button type="submit">Update</button>
+</form>
+
+<% if (error) { %>
+    <p style="color:red;"><%= error %></p>
+<% } %>

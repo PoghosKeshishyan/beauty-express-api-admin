@@ -33,3 +33,51 @@ model Navbar {
   title String
   url   String
 }
+
+model Intro {
+  id       String @id @default(uuid())
+  image    String
+  title    String
+  descr    String
+  btn_text String
+  btn_url  String
+}
+
+model Offers_heading {
+  id      String @id @default(uuid())
+  heading String
+}
+
+model Offers_item {
+  id       String @id @default(uuid())
+  image    String
+  descr    String
+  price    String
+  btn_text String
+  btn_url  String
+}
+
+model Feedback_heading {
+  id      String @id @default(uuid())
+  heading String
+}
+
+model Feedback_contact {
+  id       String @id @default(uuid())
+  image    String
+  title    String
+  descr    String
+  btn_text String
+  btn_url  String
+}
+
+model Footer {
+  id             String @id @default(uuid())
+  youtube_icon   String
+  vk_icon        String
+  instagram_icon String
+  facebook_icon  String
+  address        String
+  phone_image     String
+  phone          String
+}

@@ -1,0 +1,22 @@
+<h2><%= title %></h2>
+
+<a href="/offers_headings/create">Create New <%= title %></a>
+
+<table>
+    <tr>
+        <th>N</th>
+        <th>heading</th>
+        <th>actions</th>
+    </tr>
+
+    <% offers_headings.forEach((elem, index) => { %>
+        <tr>
+            <td><%= index + 1 %></td>
+            <td><%= elem.heading %></td>
+            <td>
+                <a href="/offers_headings/edit/<%= elem.id %>">Edit</a>
+                <a href="/offers_headings/remove/<%= elem.id %>">Remove</a>
+            </td>
+        </tr>
+    <% }) %>
+</table>

@@ -13,9 +13,6 @@ const get_images = (req, res) => {
         return allowed_ext.includes(path.extname(file).toLowerCase());
     });
 
-    console.log(images);
-    
-
     res.render('images/images', {
         images, user, title: 'Uploaded Images', layout: 'base',
     });
